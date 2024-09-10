@@ -75,7 +75,7 @@ class PostController extends Controller
     {
         $post->impressions()->create(['type' => $type]);
 
-        return redirect()->back()->with('success', 'impression added');
+        return redirect()->back()->with('success', 'impression added'); 
     }
 
     /**
