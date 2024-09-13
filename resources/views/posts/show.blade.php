@@ -46,7 +46,7 @@
 
         <!-- Impressions Section -->
         <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body flex">
                 <h5 class="card-title">Impressions</h5>
                 <p>Likes: {{ $post->impressions->where('type', 'like')->count() }} | Dislikes: {{ $post->impressions->where('type', 'dislike')->count() }}</p>
                 <form action="{{ route('posts.impressions.store', [$post, 'like']) }}" method="POST" class="d-inline">
@@ -55,8 +55,11 @@
                 </form>
                 <form action="{{ route('posts.impressions.store', [$post, 'dislike']) }}" method="POST" class="d-inline">
                     @csrf
-                    <button type="submit" class="btn btn-danger">Dislike</button>
+                    <button type="submit" class="btn btn-dark">Dislike</button>
                 </form>
+                 <div class="text-center flex justify-between">
+                    <a href=" {{ route('posts.index') }} " class="btn btn-dark flex ">Back Post</a>
+                 </div>
             </div>
         </div>
     </div>
